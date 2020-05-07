@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/txtBlueScore"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="16sp"
+            android:paddingEnd="0sp"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
+            android:text="0"
+            android:textColor="#2196F3"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5sp"
+            android:paddingTop="5sp"
+            android:paddingRight="5sp"
+            android:paddingBottom="5sp"
+            android:textAlignment="center"
+            android:text="—"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/txtRedScore"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingTop="5sp"
+            android:paddingEnd="16sp"
+            android:paddingStart="0sp"
+            android:paddingBottom="5sp"
+            android:text="0"
+            android:textColor="#D81818"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:gravity="center" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/txtTurn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Blue's turn"
+            android:textAlignment="center"
+            android:textColor="#2196F3"
+            android:textSize="24sp" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnEndTurn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="End Turn"
+            android:gravity="center"
+            />
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="2dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="3"
+        tools:listitem="@layout/card_item" />
+
+</LinearLayout>
