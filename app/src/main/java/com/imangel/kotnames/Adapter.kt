@@ -15,14 +15,12 @@ class Adapter(val listener: (Card) -> Unit, val updateUi: () -> Unit) : Recycler
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = CardItemBinding.bind(view)
-        var keycardOn = false
 
         //Colocar img y texto en recycler dada una carta
         fun bind(card: Card) {
             binding.cardWord.text = card.word
             if (card.touched) {
-                if (card.color == GameControl.NEUTRAL) binding.cardWord.setTextColor(Color.parseColor("#009900"))
-                else binding.cardWord.setTextColor(Color.parseColor("#FFFFFF"))
+                binding.cardWord.setTextColor(Color.parseColor("#FFFFFF"))
             }
             else binding.cardWord.setTextColor(Color.parseColor("#000000"))
 
@@ -59,11 +57,12 @@ class Adapter(val listener: (Card) -> Unit, val updateUi: () -> Unit) : Recycler
             listener(card)
             updateUi()
         }
+
+        //Si se activa el botón Keycard, se cambia el color de la carta por el correspondiente
         if (GameControl.keycardOn) {
             holder.itemView.apply {
                 bgCard.setImageResource(setColor(card))
-                if (card.color == GameControl.NEUTRAL) cardWord.setTextColor(Color.parseColor("#009900"))
-                else cardWord.setTextColor(Color.parseColor("#FFFFFF"))
+                cardWord.setTextColor(Color.parseColor("#FFFFFF"))
             }
         }
     }
