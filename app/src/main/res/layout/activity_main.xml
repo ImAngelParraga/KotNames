@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="40sp"
         android:orientation="horizontal">
 
 
@@ -16,43 +16,43 @@
             android:id="@+id/txtBlueScore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:paddingStart="16sp"
-            android:paddingEnd="0sp"
             android:paddingTop="5sp"
+            android:paddingEnd="0sp"
             android:paddingBottom="5sp"
             android:text="0"
-            android:textColor="#2196F3"
             android:textAlignment="center"
-            android:textSize="24sp"
-            android:gravity="center" />
+            android:textColor="#2196F3"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:paddingLeft="5sp"
             android:paddingTop="5sp"
             android:paddingRight="5sp"
             android:paddingBottom="5sp"
-            android:textAlignment="center"
             android:text="—"
+            android:textAlignment="center"
             android:textColor="#000000"
-            android:textSize="24sp"
-            android:gravity="center" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/txtRedScore"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingStart="0sp"
             android:paddingTop="5sp"
             android:paddingEnd="16sp"
-            android:paddingStart="0sp"
             android:paddingBottom="5sp"
             android:text="0"
-            android:textColor="#D81818"
             android:textAlignment="center"
-            android:textSize="24sp"
-            android:gravity="center" />
+            android:textColor="#D81818"
+            android:textSize="24sp" />
 
         <Space
             android:layout_width="wrap_content"
@@ -79,9 +79,8 @@
             android:id="@+id/btnEndTurn"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="End Turn"
             android:gravity="center"
-            />
+            android:text="End Turn" />
 
 
     </LinearLayout>

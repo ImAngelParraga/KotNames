@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         mycontext = this.applicationContext
         btnEndTurn.setOnClickListener {
-            if (gameControl.gameState != gc.GAME_OVER) gameControl.changeTurn(this)
+            if (gameControl.gameState != gc.GAME_OVER && !gameControl.keycardOn) gameControl.changeTurn(this)
             setScoreText()
         }
         setScoreText()

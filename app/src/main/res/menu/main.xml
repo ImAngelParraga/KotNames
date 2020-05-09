@@ -9,6 +9,8 @@
         android:title="New Game"/>
     <item
         android:id="@+id/mainKeycard"
+        android:icon="@android:drawable/ic_menu_view"
+        app:showAsAction="always"
         android:title="Keycard"/>
 
 </menu>

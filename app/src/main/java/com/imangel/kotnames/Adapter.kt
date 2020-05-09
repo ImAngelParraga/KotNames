@@ -20,7 +20,9 @@ class Adapter(val listener: (Card) -> Unit, val updateUi: () -> Unit) : Recycler
         fun bind(card: Card) {
             binding.cardWord.text = card.word
             if (card.touched) {
-                binding.cardWord.setTextColor(Color.parseColor("#FFFFFF"))
+                if (card.color == GameControl.NEUTRAL) binding.cardWord.setTextColor(
+                    Color.parseColor("#000000"))
+                else binding.cardWord.setTextColor(Color.parseColor("#FFFFFF"))
             }
             else binding.cardWord.setTextColor(Color.parseColor("#000000"))
 
@@ -52,7 +54,9 @@ class Adapter(val listener: (Card) -> Unit, val updateUi: () -> Unit) : Recycler
         holder.itemView.setOnClickListener {
             if (!card.touched && GameControl.gameState != GameControl.GAME_OVER) {
                 holder.itemView.bgCard.setImageResource(setColor(card))
-                holder.itemView.cardWord.setTextColor(Color.parseColor("#FFFFFF"))
+                if (card.color == GameControl.NEUTRAL) holder.itemView.cardWord.setTextColor(
+                    Color.parseColor("#000000"))
+                else holder.itemView.cardWord.setTextColor(Color.parseColor("#FFFFFF"))
             }
             listener(card)
             updateUi()
@@ -62,7 +66,9 @@ class Adapter(val listener: (Card) -> Unit, val updateUi: () -> Unit) : Recycler
         if (GameControl.keycardOn) {
             holder.itemView.apply {
                 bgCard.setImageResource(setColor(card))
-                cardWord.setTextColor(Color.parseColor("#FFFFFF"))
+                if (card.color == GameControl.NEUTRAL) cardWord.setTextColor(
+                    Color.parseColor("#000000"))
+                else cardWord.setTextColor(Color.parseColor("#FFFFFF"))
             }
         }
     }
