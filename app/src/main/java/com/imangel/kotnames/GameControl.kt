@@ -51,26 +51,22 @@ object GameControl {
             }
         }
 
-
         if (words.isEmpty()) {
             val gson = Gson()
             val jsonFileString = getJsonDataFromAsset(context, "Words.json")
             val wordsType = object : TypeToken<List<MyWord>>(){}.type
-            val mywords: List<MyWord> = gson.fromJson(jsonFileString, wordsType)
+            val myWords: List<MyWord> = gson.fromJson(jsonFileString, wordsType)
 
-            mywords.forEach{
+            myWords.forEach{
                 words.add(it.Word)
-                //Log.i("Palabrejas", it.Word)
             }
         }
-
-
 
         newKeycard()
         newBoard()
         cards.apply{
             clear()
-            for (i in (0..keycard.size-1)) {
+            for (i in (0 until keycard.size)) {
                 val card = Card(board[i], keycard[i], i, false)
                 add(card)
             }
